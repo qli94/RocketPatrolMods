@@ -96,6 +96,7 @@ class Play extends Phaser.Scene {
 
         if(!this.gameOver) {
             this.p1Rocket.update();             // update p1
+            this.p2Rocket.update();
              this.ship01.update();               // update spaceship (x3)
             this.ship02.update();
             this.ship03.update();
