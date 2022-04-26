@@ -20,4 +20,9 @@ In this new version, it becomes sunshine v.s. clouds
 
 - Create a new spaceship type (w/ new artwork) that's smaller, moves faster, and is worth more points 
 A new cloud in this version
+Receiving 30 points if it is hit
+
+- Implement an alternating two-player mode. In this mode, there is one rocket, and players take turns controlling this one rocket
+Player1: 
+Player2:
 
