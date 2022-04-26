@@ -9,7 +9,7 @@ class Play extends Phaser.Scene {
         this.load.image('rocket', 'rocket.png');
         this.load.image('spaceship', 'spaceship.png');
         this.load.image('starfield', 'starfield.png');
-        this.load.image('new', 'new.png');
+        this.load.image('newspaceship', 'newspaceship.png');
         // load spritesheet
         this.load.spritesheet('explosion', 'explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
     }
@@ -36,15 +36,15 @@ class Play extends Phaser.Scene {
         // add Rocket (p1)
         this.p1Rocket = new Rocket(this, game.config.width/2+40, game.config.height - borderUISize - borderPadding, 'rocket', 0, keyLEFT, keyRIGHT).setOrigin(0.5, 0);
         
+        
        
         // add Spaceships (x3)
         this.ship01 = new Spaceship(this, game.config.width + borderUISize*8, borderUISize*4, 'spaceship', 0, 20).setOrigin(0, 0);
         this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'spaceship', 0, 5).setOrigin(0,0);
         this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'spaceship', 0, 10).setOrigin(0,0);
 
-        this.new = new Spaceship(this, game.config.width, borderUISize*3 + borderPadding*4, 'new', 0, 30).setOrigin(0,0);
-      
-     
+        this.ship04 = new newSpaceship(this, game.config.width, borderUISize*3 + borderPadding*4, 'newspaceship', 0, 30).setOrigin(0,0);
+        
 
         // animation config
         this.anims.create({
@@ -81,6 +81,7 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← to Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+        this.timerRight = this.add.text(game.config.width - borderUISize - borderPadding - 120, borderUISize + borderPadding*2, + this.clock.getElapsedSeconds(), scoreConfig);
     }
 
     update() {
@@ -100,7 +101,7 @@ class Play extends Phaser.Scene {
              this.ship01.update();               // update spaceship (x3)
             this.ship02.update();
             this.ship03.update();
-            this.new.update();
+            this.ship04.update();
         }
 
         // check collisions
@@ -116,10 +117,12 @@ class Play extends Phaser.Scene {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
         }
-        if (this.checkCollision(this.p1Rocket, this.new)) {
+        if (this.checkCollision(this.p1Rocket, this.ship04)) {
             this.p1Rocket.reset();
-            this.shipExplode(this.new);
+            this.shipExplode(this.ship04);
         }
+        this.time1 = Math.trunc(60 - this.clock.getElapsedSeconds());
+        this.timerRight.text = this.time1;
     }
 
     checkCollision(rocket, ship) {
