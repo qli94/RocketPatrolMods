@@ -29,3 +29,4 @@ Player1: Use Key A&D to move & SPACE to fire
 
 Player2: Use ←→ arrows to move & F to fire
 
+Collaborator：Yiye Zhu, Zhenglin Feng
