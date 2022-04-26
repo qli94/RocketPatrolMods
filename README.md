@@ -23,7 +23,7 @@ In this new version, it becomes sunshine v.s. clouds
 A new cloud in this version
 Receiving 30 points if it is hit
 
-- Implement an alternating two-player mode. In this mode, there is one rocket, and players take turns controlling this one rocket
+- Implement an alternating two-player mode. In this mode, there is one rocket, and players take turns controlling this one rocket:
 
 Player1: Use Key A&D to move & SPACE to fire
 
