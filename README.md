@@ -7,6 +7,7 @@ Project Title: Rocket Patrol Mods
 Date: 
 
 Initial Version: 4/19/2022
+
 Updated Version(to GitHub): 4/26/2022
 
 How Long It Takes: It takes me more than 15 hours to accomplish
@@ -23,6 +24,8 @@ A new cloud in this version
 Receiving 30 points if it is hit
 
 - Implement an alternating two-player mode. In this mode, there is one rocket, and players take turns controlling this one rocket
+
 Player1: Use Key A&D to move & SPACE to fire
+
 Player2: Use ←→ arrows to move & F to fire
 
